@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import useDownloader from 'react-use-downloader';
+
 
 const Home = () => {
     const [morningReading, setMorningReading] = useState<number | string>('');
@@ -95,55 +95,55 @@ const Home = () => {
     const currentData = calculations.slice((currentPage - 1) * recordsPerPage, currentPage * recordsPerPage);
   
     return (
-        <div className="bg-gray-100 flex items-center justify-center min-h-screen p-4 text-black">
+        <div className="flex items-center justify-center min-h-screen p-4 text-black bdcolor">
             {!showTable && (
-                <div id="calculator" className={`bg-white p-8 rounded shadow-md w-96 ${result !== null ? 'hidden' : ''}`}>
+                <div id="calculator" className={`bdcolor p-8 rounded shadow-md w-96 ${result !== null ? 'hidden' : ''}`}>
                     <h1 className="text-2xl font-bold mb-4 text-black">Balance Calculator</h1>
                     <div className="mb-4">
-                        <label htmlFor="morningReading" className="block text-gray-700">Morning Reading:</label>
+                        <label htmlFor="morningReading" className="block text-[#f6f614] font-bold text-lg">Morning Reading:</label>
                         <input
                             type="number"
                             id="morningReading"
                             value={morningReading}
                             onChange={(e) => setMorningReading(e.target.value)}
-                            className="mt-1 p-2 border border-gray-300 rounded w-full"
+                            className="mt-1 p-2 border border-white rounded w-full"
                             placeholder="Enter morning reading"
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="eveningReading" className="block text-gray-700">Evening Reading:</label>
+                        <label htmlFor="eveningReading" className="block text-[#f6f614] font-bold text-lg">Evening Reading:</label>
                         <input
                             type="number"
                             id="eveningReading"
                             value={eveningReading}
                             onChange={(e) => setEveningReading(e.target.value)}
-                            className="mt-1 p-2 border border-gray-300 rounded w-full"
+                            className="mt-1 p-2 border border-white rounded w-full"
                             placeholder="Enter evening reading"
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="price" className="block text-gray-700">Price:</label>
+                        <label htmlFor="price" className="block text-[#f6f614] font-bold text-lg">Price:</label>
                         <input
                             type="number"
                             id="price"
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
-                            className="mt-1 p-2 border border-gray-300 rounded w-full"
+                            className="mt-1 p-2 border border-white rounded w-full"
                             placeholder="Enter price"
                         />
                     </div>
                     <div className="flex space-x-2">
-                        <button onClick={handleCalculate} className="bg-blue-500 text-white p-2 rounded w-full">Calculate</button>
-                        <button onClick={handleClear} className="bg-gray-500 text-white p-2 rounded w-full">Clear</button>
+                        <button onClick={handleCalculate} className="bg-green-400 text-black font-bold p-2 rounded w-full">Calculate</button>
+                        <button onClick={handleClear} className="bg-orange-600 text-black font-bold p-2 rounded w-full">Clear</button>
                     </div>
                     {!showTable && result === null && (
-                        <button onClick={() => setShowTable(true)} className="bg-blue-500 text-white p-2 rounded mt-4">Show Data</button>
+                        <button onClick={() => setShowTable(true)} className="bg-blue-500 text-black font-bold  text-bold p-2 w-full rounded mt-4">Show Data</button>
                     )}
                 </div>
             )}
 
             {result !== null && !showTable && (
-                <div id="resultPage" className="bg-white p-8 rounded shadow-md w-96">
+                <div id="resultPage" className=" bdcolor p-8 rounded shadow-md w-96">
                     <h1 className="text-2xl font-bold mb-4">Calculation Result</h1>
                     <p className="text-xl">Morning Reading: <span className="font-semibold">{morningReading}</span></p>
                     <p className="text-xl">Evening Reading: <span className="font-semibold">{eveningReading}</span></p>
@@ -154,36 +154,36 @@ const Home = () => {
             )}
 
             {showTable && (
-                <div id="allDataPage" className="bg-white p-8 rounded shadow-md w-full max-w-4xl">
+                <div id="allDataPage" className="bdcolor p-8 rounded shadow-md w-full max-w-4xl">
                     <h1 className="text-2xl font-bold mb-4">All Calculations</h1>
                     <div className="overflow-x-auto">
-                        <table className="min-w-full bg-white">
+                        <table className="min-w-full bdcolor">
                             <thead>
                                 <tr>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614] tracking-wider">
                                         Serial Number
                                     </th>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614] tracking-wider">
                                         Morning Reading
                                     </th>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614] tracking-wider">
                                         Evening Reading
                                     </th>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614] tracking-wider">
                                         Price
                                     </th>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614] tracking-wider">
                                         Result
                                     </th>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614] tracking-wider">
                                         Date
                                     </th>
-                                    <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    <th className="px-6 py-3 border-b-2 border-white text-left leading-4 text-[#f6f614]  tracking-wider">
                                         Actions
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody id="allData" className="bg-white">
+                            <tbody id="allData" className="bdcolor text-white text-center font-bold">
                                 {currentData.map((item, index) => (
                                     <tr key={index}>
                                         <td className="border px-4 py-2 whitespace-no-wrap">{(currentPage - 1) * recordsPerPage + index + 1}</td>
@@ -201,10 +201,10 @@ const Home = () => {
                         </table>
                     </div>
                     <div className="flex justify-between mt-4">
-                        <button onClick={() => setShowTable(false)} className="bg-blue-500 text-white p-2 rounded">Go Back</button>
+                        <button onClick={() => setShowTable(false)} className=" bg-green-400 text-black font-bold p-2 rounded">Go Back</button>
                         <div >
-                            <button onClick={() => setCurrentPage(currentPage - 1)} className="bg-blue-500 text-white p-2 rounded mr-2" disabled={currentPage === 1}>Previous</button>
-                            <button onClick={() => setCurrentPage(currentPage + 1)} className="bg-blue-500 text-white p-2 rounded" disabled={currentData.length < recordsPerPage}>Next</button>
+                            <button onClick={() => setCurrentPage(currentPage - 1)} className="bg-red-400 text-black font-bold p-2 rounded mr-2" disabled={currentPage === 1}>Previous</button>
+                            <button onClick={() => setCurrentPage(currentPage + 1)} className="bg-blue-400 text-black  font-bold p-2 rounded" disabled={currentData.length < recordsPerPage}>Next</button>
                         </div>
                     </div>
                 </div>

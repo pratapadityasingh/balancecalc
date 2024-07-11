@@ -17,17 +17,25 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bdcolor {
+  background: rgb(45,44,44);
+  background: -moz-linear-gradient(350deg, rgba(45,44,44,1) 4%, rgba(180,175,175,1) 22%, rgba(45,44,44,1) 42%, rgba(5,5,5,1) 61%, rgba(162,157,157,1) 79%, rgba(238,231,231,0.9977240896358543) 100%);
+  background: -webkit-linear-gradient(350deg, rgba(45,44,44,1) 4%, rgba(180,175,175,1) 22%, rgba(45,44,44,1) 42%, rgba(5,5,5,1) 61%, rgba(162,157,157,1) 79%, rgba(238,231,231,0.9977240896358543) 100%);
+  background: linear-gradient(350deg, rgba(45,44,44,1) 4%, rgba(180,175,175,1) 22%, rgba(45,44,44,1) 42%, rgba(5,5,5,1) 61%, rgba(162,157,157,1) 79%, rgba(238,231,231,0.9977240896358543) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d2c2c",endColorstr="#eee7e7",GradientType=1);
 }
